@@ -56,6 +56,22 @@ flowchart TD
 
 ## OUTPUT:
 Captured Web Activity and Email Header Information
+<img width="1125" height="625" alt="image" src="https://github.com/user-attachments/assets/37855146-3a49-406f-980c-49d117f1f3d9" />
+Analyze DNS Queries: o Filter: dns
+ o Reveal domains the browser tried to resolve
+ <img width="1124" height="632" alt="image" src="https://github.com/user-attachments/assets/0b163417-8884-49dd-9818-4e80fb43c2b6" />
+ Email Header Analysis
+ 1. Apply relevant filters:
+ 2. 
+o For POP3: tcp.port == 110
+ o For SMTP: tcp.port == 25 or 587
+ o For IMAP: tcp.port == 143 or 993
+ 4. Locate email data
+ o Look for SMTP packets to see sender/receiver email addresses.
+ o Use "Follow TCP Stream" to view the full email headers and body if unencrypted
+## Extract Email Header Fields:
+ o Analyze From, To, Subject, Date, Message-ID, and relay servers used in sending the email.
+ <img width="1125" height="696" alt="image" src="https://github.com/user-attachments/assets/aa031be3-69a3-4b0b-b3bd-3c3066b0907f" />
 
 ## RESULT:
 Web browser artifacts and email headers were successfully analyzed using Wireshark.
